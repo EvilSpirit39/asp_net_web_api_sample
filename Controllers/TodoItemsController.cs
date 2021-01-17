@@ -9,6 +9,8 @@ using asp_net_web_api_sample.Models;
 
 namespace asp_net_web_api_sample.Controllers
 {
+    // Web APIではアクションメソッドは無く、コントローラ名までがエンドポイント
+    // ApiController属性は当クラスがWeb APIを扱うことを示す
     [Route("api/[controller]")]
     [ApiController]
     public class TodoItemsController : ControllerBase
@@ -20,6 +22,7 @@ namespace asp_net_web_api_sample.Controllers
             _context = context;
         }
 
+        // GETメソッドのハンドラ
         // GET: api/TodoItems
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
@@ -27,6 +30,7 @@ namespace asp_net_web_api_sample.Controllers
             return await _context.TodoItems.ToListAsync();
         }
 
+        // GETメソッドのハンドラ(idパラメータあり)
         // GET: api/TodoItems/5
         [HttpGet("{id}")]
         public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
@@ -41,6 +45,7 @@ namespace asp_net_web_api_sample.Controllers
             return todoItem;
         }
 
+        // PUTメソッドのハンドラ(idパラメータあり)
         // PUT: api/TodoItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -72,6 +77,7 @@ namespace asp_net_web_api_sample.Controllers
             return NoContent();
         }
 
+        // POSTメソッドのハンドラ
         // POST: api/TodoItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
@@ -83,6 +89,7 @@ namespace asp_net_web_api_sample.Controllers
             return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
         }
 
+        // DELETEメソッドのハンドラ(idパラメータあり)
         // DELETE: api/TodoItems/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
