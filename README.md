@@ -2,6 +2,11 @@
 ASP.NETでWeb APIを作るサンプル
 
 # 手順
+
+## ツールのインストール
+- aspnet-codegeneratorをインストール、アップデートしておく
+  - `dotnet tool install -g dotnet-aspnet-codegenerator`
+  - `dotnet tool update -g dotnet-aspnet-codegenerator`
 ## テンプレートからプロジェクトを作成
 `dotnet new webapi` コマンドでテンプレートからプロジェクトを作成する。
 
@@ -10,6 +15,9 @@ ASP.NETでWeb APIを作るサンプル
 - データベースに対応したEntity Frameworkを追加  
   - `dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
   - `dotnet add package Microsoft.EntityFrameworkCore.InMemory`
+- aspnet-codegeneratorのパッケージを追加
+  - `dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design`
+  - `dotnet add package Microsoft.EntityFrameworkCore.Design`
 
 ## 開発用証明書を信頼
 - `dotnet dev-certs https --trust` のコマンドで、開発用の証明書を信頼する。
