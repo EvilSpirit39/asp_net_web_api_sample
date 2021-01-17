@@ -43,3 +43,6 @@ ASP.NETでWeb APIを作るサンプル
 
 - テンプレートから生成したデフォルトの状態では、`WeatherForecast` エンドポイントが実装されている。
 - `swagger` エンドポイントにアクセスすると、Swagger UI が開け、OpenAPI仕様を見ることができる。
+
+## Web API メソッドの戻り値
+- 戻り値を`ActionResult<T>` 型とすると、フレームワーク側で自動的にJSONにシリアライズしてくれる。
