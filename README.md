@@ -5,6 +5,16 @@ ASP.NETでWeb APIを作るサンプル
 ## テンプレートからプロジェクトを作成
 `dotnet new webapi` コマンドでテンプレートからプロジェクトを作成する。
 
+## データベース関連のパッケージを追加
+
+- データベースに対応したEntity Frameworkを追加  
+  - `dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
+  - `dotnet add package Microsoft.EntityFrameworkCore.InMemory`
+
+## 開発用証明書を信頼
+- `dotnet dev-certs https --trust` のコマンドで、開発用の証明書を信頼する。
+- これにより、ローカル実行時のHTTPSアクセスが信頼される。
+
 
 # 情報
 ## webapiテンプレートについて
