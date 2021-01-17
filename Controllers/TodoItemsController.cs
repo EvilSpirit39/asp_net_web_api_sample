@@ -86,7 +86,8 @@ namespace asp_net_web_api_sample.Controllers
             _context.TodoItems.Add(todoItem);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
+            // 「201 Created」のステータスを返す。LocationはGetTodoItemに対応するURI
+            return CreatedAtAction(nameof(GetTodoItem), new { id = todoItem.Id }, todoItem);
         }
 
         // DELETEメソッドのハンドラ(idパラメータあり)
