@@ -35,6 +35,9 @@ ASP.NETでWeb APIを作るサンプル
 
 - `Models` ディレクトリ下に`DbContext` を継承したコンテキストを作り、プロパティとして`DbSet` を持たせる 
 
+## スキャフォールディング
+- スキャフォールディングでコントローラを作成。これもMVCの場合とほぼ同様。`-api` オプションを付ける点に注意。
+  - `dotnet aspnet-codegenerator controller -name <コントローラ名> -async -api -m <クラス名> -dc <コンテキスト名> -outDir <ディレクトリ名>`
 # 情報
 ## webapiテンプレートについて
 
